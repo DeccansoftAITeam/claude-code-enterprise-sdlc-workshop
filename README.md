@@ -26,7 +26,16 @@ python -m venv .venv
 .\.venv\Scripts\python -m uvicorn app:app --reload
 ```
 
-Open http://127.0.0.1:8000 and submit $501.00. On the baseline branches the response is approved immediately. On `3-review`, use the review page and `STAGE.md`; a $500.01 request is held for finance approval. Stop the server with Ctrl+C. Linux/macOS: use `.venv/bin/python` instead. Use synthetic data only.
+On macOS/Linux:
+
+```bash
+python3 -m venv .venv
+./.venv/bin/python -m pip install -r requirements.txt
+./.venv/bin/python -m pytest -q
+./.venv/bin/python -m uvicorn app:app --reload
+```
+
+Open http://127.0.0.1:8000 and submit $501.00. On the baseline branches the response is approved immediately. On `3-review`, use the review page and `STAGE.md`; a $500.01 request is held for finance approval. Stop the server with Ctrl+C. Use synthetic data only.
 
 `python -m pytest -q` runs the tests under `tests/`. The local MCP check is separate: run `python test_mcp.py` from the `.venv-mcp` environment described in `docs/mcp.md`.
 

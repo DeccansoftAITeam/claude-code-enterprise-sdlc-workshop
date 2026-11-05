@@ -13,6 +13,8 @@ Northstar is a fictional online retailer. Support agents submit customer refunds
 
 Each branch is a stand-alone starting point. Save your work before changing branches: `git switch -c pair-work` creates a local branch. To begin another stage, commit your work locally, then `git switch 2-implement` (or `3-review`) and make another local branch. Compare against the solutions at each transition. The trainer represents business roles.
 
+`main`, `1-discover` and `2-implement` contain the baseline that approves any positive amount. `3-review` contains a completed-looking implementation with two deliberate defects; follow its `STAGE.md`, and expect the included tests to fail until you find and fix them. No branch deploys anything.
+
 ## Start the application
 
 Windows PowerShell from the repository root:
@@ -24,6 +26,8 @@ python -m venv .venv
 .\.venv\Scripts\python -m uvicorn app:app --reload
 ```
 
-Open http://127.0.0.1:8000 and submit $501.00. The baseline approves it immediately. Stop the server with Ctrl+C. Linux/macOS: use `.venv/bin/python` instead. Use synthetic data only.
+Open http://127.0.0.1:8000 and submit $501.00. On the baseline branches the response is approved immediately. On `3-review`, use the review page and `STAGE.md`; a $500.01 request is held for finance approval. Stop the server with Ctrl+C. Linux/macOS: use `.venv/bin/python` instead. Use synthetic data only.
+
+`python -m pytest -q` runs the tests under `tests/`. The local MCP check is separate: run `python test_mcp.py` from the `.venv-mcp` environment described in `docs/mcp.md`.
 
 See `STAGE.md` for the current stage. `docs/mcp.md` explains the local evidence server. `docs/participant.md` and `docs/trainer.md` provide the guided materials. Reference code is a teaching solution, not production-ready financial software.

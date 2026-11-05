@@ -52,3 +52,6 @@ On branch 3, use the prompt in STAGE.md. Independently check the $500 boundary a
 
 ### Prompt adaptation
 A good prompt names the goal, the relevant inputs, the scope of permitted actions and the expected evidence. Ask follow-up questions when Claude gives a conclusion without a source, and check the cited file or command output. The starter prompts are usable as written; adapt them as you learn more about the project.
+
+### Session hook demonstration
+Inspect `.claude/settings.json` and `.claude/session_context.py`. The SessionStart hook prints a training reminder. It does not enforce policy or prevent data access. Run `python .claude/session_context.py` to check its output, then inspect `/hooks` in Claude Code to confirm the hook is loaded. Discuss which safeguards would require permissions and independent backend or operating-system controls. The project may require trust before hooks run.

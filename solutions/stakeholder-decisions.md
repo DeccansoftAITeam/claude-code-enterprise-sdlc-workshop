@@ -1,6 +1,6 @@
 # Northstar fictional business evidence
 
-Everything in this case is invented for teaching. Do not use real customer information. The baseline code is in `refund-lab/starter/`; observe it before consulting the reference solution.
+Everything in this case is invented for teaching. Do not use real customer information. The baseline code is the repository-root `app.py`; observe it before consulting the reference solution.
 
 ## TICKET-101: customer-support request
 

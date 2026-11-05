@@ -1,0 +1,12 @@
+﻿.venv*/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.sqlite3
+*.pdf
+review.png
+build_documents.py
+render_review.py
+set*.txt
+stage2.txt
+stage3.txt

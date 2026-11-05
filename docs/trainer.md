@@ -43,3 +43,6 @@ On branch 2, paste the planning prompt from STAGE.md. Show how the pair checks t
 
 ### Close on release readiness
 On branch 3, show how to inspect failing tests and reproduce the authorization problem. Avoid presenting an agent's review as an approval. The intended decision for the defective branch is no-go. Explain what evidence would still be needed for a real release, including production security, payment-provider behavior, protected audit, CI, staging and rollback. These are discussed rather than executed today.
+
+### Hook demonstration
+Open `.claude/settings.json`, explain the `SessionStart` event and run the script once to show its output. In Claude Code use `/hooks` to inspect the loaded hook. The reminder is context, not an access-control boundary. An organization must verify its permission settings and independent enforcement; this sample does not protect an audit database.

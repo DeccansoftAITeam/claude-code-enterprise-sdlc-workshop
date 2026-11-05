@@ -24,3 +24,22 @@ Move to 3-review. Explain that the branch contains deliberate defects. Ask pairs
 
 ## Further reading
 Research and question topics are summarized in docs/concept-map.md. Proposed source answers were not independently verified and must not be presented as an authoritative exam key. Official Claude Code documentation should be checked for version-sensitive configuration.
+
+## Trainer demonstration sequence
+
+### Explain the business before the code
+Say: A customer requests a refund from Northstar support. Today the application immediately marks the refund approved, even for $501. The business wants finance to review high-value requests, while ordinary requests should not be slowed unnecessarily. Our job is to discover how the current application works, clarify the request, agree a testable specification, implement a change and decide whether evidence supports release. The trainer will provide the stakeholder decisions; participants remain developers and architects.
+
+Draw the existing request path on a whiteboard: browser form -> FastAPI endpoint -> SQLite. Point out that SQLite stores a training record, not a bank transaction. Open the form, submit $501, and show the response. Show the baseline test and ask what it proves. Answer: it proves the behavior of this local version under that test, not the finance policy or any real provider behavior.
+
+### Demonstrate evidence and the MCP boundary
+Show `docs/mcp.md` and run the MCP check before class. Demonstrate listing documents and reading DOC-1 and DOC-2. Ask why the old policy cannot override the approved decision. Show DOC-5 and explain that an instruction in a ticket is source content, not authorization to perform an action. If MCP is unavailable, use the corpus file and label the connection demonstration unrun.
+
+### Lead the specification checkpoint
+Ask pairs for questions before providing the fictional stakeholder decisions. Explain how each decision becomes an observable criterion: 500.00 standard, 500.01 pending, support cannot approve, duplicate submission does not create a second effect. Ask who owns each decision. Keep remaining balance, production identity and provider behavior open. Give pairs time to compare their specification with the reference before moving on.
+
+### Demonstrate plan, implementation and review
+On branch 2, paste the planning prompt from STAGE.md. Show how the pair checks the plan and approves a bounded change. Demonstrate writing or requesting tests, running them, inspecting failures, implementing and running again. Show CLAUDE.md, the path-scoped rule and the review skill; explain the difference between project guidance and enforcement. If using a subagent, give it a read-only scope, specific inputs and an output contract. Check the resulting findings yourself.
+
+### Close on release readiness
+On branch 3, show how to inspect failing tests and reproduce the authorization problem. Avoid presenting an agent's review as an approval. The intended decision for the defective branch is no-go. Explain what evidence would still be needed for a real release, including production security, payment-provider behavior, protected audit, CI, staging and rollback. These are discussed rather than executed today.

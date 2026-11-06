@@ -1,7 +1,7 @@
 ﻿# Participant workbook
 
 ## What is Northstar?
-Northstar is a fictional online retailer. A customer contacts support about an order and the support agent submits a refund. The current training application records a refund immediately as approved. It has no real payment connection. The business has requested finance oversight of high-value refunds, a reason, an audit trail and protection against accidental double submission. Your role is a developer or architect on the delivery team. You work independently; the business roles (support, finance, product, security, data) speak through the documents in `policy-docs/`.
+Northstar is a fictional online retailer. A customer contacts support about an order and the support agent submits a refund. The current training application records a refund immediately as approved. The business has requested finance oversight of high-value refunds, a reason, an audit trail and protection against accidental double submission. Your role is a developer or architect on the delivery team. You work independently; the business roles (support, finance, product, security, data) speak through the documents in `policy-docs/`.
 
 ## How the enterprise delivery flow fits together
 A customer need enters as a ticket (here, a GitHub issue). Product and the BA clarify the problem and gather evidence; finance owns policy and security owns security requirements. You discover current behaviour and write a testable specification and design, then implement against approved decisions. Reviewers examine behaviour and evidence independently. A release owner decides go or no-go; operations monitor the service. Claude Code can assist at every stage, but the responsible people keep their decisions: you approve the spec, you read the failing tests, you review the diff.
@@ -10,7 +10,7 @@ A customer need enters as a ticket (here, a GitHub issue). Product and the BA cl
 Use only fictional data. Each stage has a clean branch and a reference solution to compare against. The full day is 360 minutes: introduction 60, discovery/specification 120, implementation 120, review/release readiness 60. Plan your own breaks.
 
 ## Introduction (60 minutes)
-Run the app, submit order-100 for $501.00 and observe the response. Look at `app.py`, `tests/test_baseline.py` and `README.md`. What part of the flow is implemented? What does the application not do? The architecture is browser form -> FastAPI endpoint -> local SQLite. A response marked APPROVED is a training record, not money transferred. Then open the GitHub issue (`gh issue view 1`) and read the documents it links to in `policy-docs/`.
+Run the app, submit order-100 for $501.00 and observe the response. Look at `app.py`, `tests/test_baseline.py` and `README.md`. What part of the flow is implemented? What does the application not do? The architecture is browser form -> FastAPI endpoint -> local SQLite. Then open the GitHub issue (`gh issue view 1`) and read the documents it links to in `policy-docs/`.
 
 ## Branch 1: discovery and specification (120 minutes)
 Follow `STAGE.md`.
@@ -25,7 +25,7 @@ Commit your work, then switch as directed in `README.md`. Read `STAGE.md` and `d
 1. In plan mode (`claude --permission-mode plan`), ask Claude Code to draft sections 5 and 6 of the spec (design delta, contract, tasks, risk tier and gates). Review the plan; do not accept it unread.
 2. Approve the spec yourself (gate G1): change `Status: draft` to `Status: approved` and commit.
 3. For each task, `/clear`, then ask for failing tests only, read them (gate G2) and commit them. Then ask for the code, run the suite and review the diff (gate G3).
-4. Run the built-in `/code-review` on the change. Compare with `solutions/reference_app.py` and `reference_tests.py`. The solution uses demo tokens, SQLite and a fake effect; it is not a production payment system.
+4. Run the built-in `/code-review` on the change. Compare with `solutions/reference_app.py` and `reference_tests.py`.
 
 ## Branch 3: review and release readiness (60 minutes)
 Commit your work, then switch to `3-review`. Review the supplied implementation and test output against the specification. Run `/code-review` (and `/security-review` for the authorization path), then verify each finding with code and tests. Record the affected requirement, evidence and release impact. Produce a release recommendation and list the checks that were not run. Compare with `solutions/stage3-review.md`. No deployment occurs.
@@ -40,7 +40,7 @@ Run the starter, submit $501 and inspect the response. In Claude Code paste:
 
 Inspect app.py, index.html and tests/test_baseline.py. Explain the request flow from browser to database, identifying each file and function. State what the existing test demonstrates and what it does not demonstrate. Do not change files.
 
-Check the cited code yourself. Expected observation: the service validates a positive decimal, records it in SQLite, and labels it approved. No real payment provider is present. The current test characterizes behaviour; it does not establish policy.
+Check the cited code yourself. Expected observation: the service validates a positive decimal, records it in SQLite, and labels it approved. The current test characterizes behaviour; it does not establish policy.
 
 ### Explore the sources
 Ask Claude Code:

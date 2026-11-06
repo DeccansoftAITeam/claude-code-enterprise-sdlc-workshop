@@ -39,4 +39,4 @@ Open http://127.0.0.1:8000 and submit $501.00. On the baseline branches the resp
 
 `python -m pytest -q` runs the tests under `tests/`. The local MCP check is separate: run `python test_mcp.py` from the `.venv-mcp` environment described in `docs/mcp.md`.
 
-See `STAGE.md` for the current stage. `docs/mcp.md` explains the local evidence server. `docs/participant.md` and `docs/trainer.md` provide the guided materials. Reference code is a teaching solution, not production-ready financial software.
+See `STAGE.md` for the current stage. `docs/mcp.md` explains the local evidence server. `docs/participant.md` provides the guided materials. Reference code is a teaching solution, not production-ready financial software.

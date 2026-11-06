@@ -1,7 +1,14 @@
 {
   "hooks": {
-    "SessionStart": [{
-      "hooks": [{"type": "command", "command": "python .claude/session_context.py"}]
-    }]
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python .claude/session_context.py"
+          }
+        ]
+      }
+    ]
   }
 }

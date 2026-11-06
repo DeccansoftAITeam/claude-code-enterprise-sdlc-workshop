@@ -1,6 +1,6 @@
 ﻿# Running the completed reference
 
-This reference is a teaching solution using demo identities and fake payment effects. To run it in an isolated copy, copy `solutions/reference_app.py` to a new folder as `app.py`, copy `solutions/reference_tests.py` as `test_app.py`, copy `solutions/reference-ui.html` as `review.html`, and copy the root `requirements.txt`. Append the following to `app.py`:
+To run it in an isolated copy, copy `solutions/reference_app.py` to a new folder as `app.py`, copy `solutions/reference_tests.py` as `test_app.py`, copy `solutions/reference-ui.html` as `review.html`, and copy the root `requirements.txt`. Append the following to `app.py`:
 
 ```python
 from fastapi.responses import HTMLResponse

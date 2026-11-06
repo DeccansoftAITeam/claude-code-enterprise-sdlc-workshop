@@ -15,6 +15,16 @@ Each branch is a stand-alone starting point. Save your work before changing bran
 
 `main`, `1-discover` and `2-implement` contain the baseline that approves any positive amount. `3-review` contains a completed-looking implementation with two deliberate defects; follow its `STAGE.md`, and expect the included tests to fail until you find and fix them. No branch deploys anything.
 
+## Prerequisites
+
+Claude Code, Python 3.10+, Git, and a way to read the GitHub issue, which is your entry point. Use one of these:
+
+- **GitHub CLI (recommended):** install `gh` (https://cli.github.com), run `gh auth login` once, then `gh issue view 1 --repo DeccansoftAITeam/claude-code-enterprise-sdlc-workshop` (or just `gh issue view 1` inside your clone). Claude Code can run the same command for you.
+- **GitHub MCP server (optional alternative):** if your organization already uses it, add it with `claude mcp add --transport http github https://api.githubcopilot.com/mcp/` and authenticate when prompted, then ask Claude Code to read issue 1 of this repository.
+- **No tooling:** open https://github.com/DeccansoftAITeam/claude-code-enterprise-sdlc-workshop/issues/1 in a browser and paste the text into Claude Code.
+
+The issue links to the documents in `policy-docs/`, which are also in your clone, so you can read them offline.
+
 ## Start the application
 
 Windows PowerShell from the repository root:

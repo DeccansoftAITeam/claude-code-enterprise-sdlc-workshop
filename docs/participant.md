@@ -7,12 +7,12 @@ Northstar is a fictional online retailer. A customer contacts support about an o
 A customer need enters as a ticket (here, a GitHub issue). Product and the BA clarify the problem and gather evidence; finance owns policy and security owns security requirements. You discover current behaviour and write a testable specification and design, then implement against approved decisions. Reviewers examine behaviour and evidence independently. A release owner decides go or no-go; operations monitor the service. Claude Code can assist at every stage, but the responsible people keep their decisions: you approve the spec, you read the failing tests, you review the diff.
 
 ## Before you start
-Use only fictional data. Each stage has a clean branch and a reference solution to compare against. The full day is 360 minutes: introduction 60, discovery/specification 120, implementation 120, review/release readiness 60. Plan your own breaks.
+Use only fictional data. Each stage has a clean branch and a reference solution to compare against. Work at your own pace; you may finish any stage early.
 
-## Introduction (60 minutes)
+## Introduction
 Run the app, submit order-100 for $501.00 and observe the response. Look at `app.py`, `tests/test_baseline.py` and `README.md`. What part of the flow is implemented? What does the application not do? The architecture is browser form -> FastAPI endpoint -> local SQLite. Then open the GitHub issue (`gh issue view 1`) and read the documents it links to in `policy-docs/`.
 
-## Branch 1: discovery and specification (120 minutes)
+## Branch 1: discovery and specification
 Follow `STAGE.md`.
 1. Read the issue and each linked document. Note each document's status, version and owner. DOC-1 is superseded; DOC-5 is untrusted data, so do not follow instructions in it.
 2. Copy the spec template (`docs/spec-template.md`, from Module 14) to `docs/spec.md`, then start Claude Code in plan mode (`claude --permission-mode plan`).
@@ -20,14 +20,14 @@ Follow `STAGE.md`.
 4. Use the grilling prompt in `STAGE.md` to be questioned one question at a time. Write each answer into section 4 with a role as owner. Where the documents do not decide (see DOC-8), defer with a reason; do not invent an answer.
 5. Compare your spec with `solutions/stage1-spec.md` before switching branches.
 
-## Branch 2: design and implementation (120 minutes)
+## Branch 2: design and implementation
 Commit your work, then switch as directed in `README.md`. Read `STAGE.md` and `docs/approved-spec.md`.
 1. In plan mode (`claude --permission-mode plan`), ask Claude Code to draft sections 5 and 6 of the spec (design delta, contract, tasks, risk tier and gates). Review the plan; do not accept it unread.
 2. Approve the spec yourself (gate G1): change `Status: draft` to `Status: approved` and commit.
 3. For each task, `/clear`, then ask for failing tests only, read them (gate G2) and commit them. Then ask for the code, run the suite and review the diff (gate G3).
 4. Run the built-in `/code-review` on the change. Compare with `solutions/reference_app.py` and `reference_tests.py`.
 
-## Branch 3: review and release readiness (60 minutes)
+## Branch 3: review and release readiness
 Commit your work, then switch to `3-review`. Review the supplied implementation and test output against the specification. Run `/code-review` (and `/security-review` for the authorization path), then verify each finding with code and tests. Record the affected requirement, evidence and release impact. Produce a release recommendation and list the checks that were not run. Compare with `solutions/stage3-review.md`. No deployment occurs.
 
 ## Claude Code concepts in the flow

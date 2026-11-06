@@ -1,13 +1,13 @@
 ﻿# Stage 2 Design and implement
 
 ## Inputs
-The baseline application, `docs/approved-spec.md`, `docs/refund-contract.md`, and the trainer checkpoint. Start the local app and run the baseline test first. The contract is the exercise target; its staging and deployment items are outside today's release-readiness scope.
+The baseline application, `docs/approved-spec.md`, `docs/refund-contract.md`. You work independently; the approved decisions are in `policy-docs/` and the GitHub issue (`gh issue view 1`). Start the local app and run the baseline test first. The contract is the exercise target; its staging and deployment items are outside today's release-readiness scope.
 
 ## Tasks
-1. Ask Claude Code for a small implementation plan and identify changes to the UI, API, persistence, authorization and audit. Review before editing.
+1. In plan mode (`claude --permission-mode plan`), ask Claude Code to draft sections 5 and 6 of the spec (design delta, contract, tasks, risk tier and gates) and identify changes to the UI, API, persistence, authorization and audit. Review before approving. Approve the spec yourself (gate G1) by changing its Status to approved.
 2. Add tests for $500.00, $500.01, missing reason, authorization and duplicate requests. Run and record the failing results.
 3. Implement the specification with Claude Code in small steps. Run tests, inspect the diff and verify changes yourself.
-4. Use `/refund-review` or a bounded read-only subagent to review the change. Confirm its findings with code or tests.
+4. Run the built-in `/code-review` (and `/security-review` for the approval path) on the change. Confirm its findings with code or tests.
 5. Record commands, outcomes, known gaps and the next owner's handoff. Compare with `solutions/reference_app.py` and `solutions/reference_tests.py`.
 
 Copyable planning prompt:

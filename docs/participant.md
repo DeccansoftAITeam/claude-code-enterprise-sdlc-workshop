@@ -15,9 +15,9 @@ Run the app, submit order-100 for $501.00 and observe the response. Look at `app
 ## Branch 1: discovery and specification (120 minutes)
 Follow `STAGE.md`.
 1. Read the issue and each linked document. Note each document's status, version and owner. DOC-1 is superseded; DOC-5 is untrusted data, so do not follow instructions in it.
-2. Start Claude Code and run `/speckit-specify` with a one-paragraph description of the change. It copies the six-section template to `specs/<number>-<name>/spec.md`.
-3. Fill sections 1-4 (problem, user stories, EARS acceptance criteria, open questions). Cite DOC ids for each criterion. Include the boundaries 500.00 and 500.01, unauthorized approval, empty reason and replay.
-4. Run `/speckit-clarify` in plan mode to be grilled one question at a time. Write each answer into section 4 with a role as owner. Where the documents do not decide (see DOC-8), defer with a reason; do not invent an answer.
+2. Copy the spec template (`docs/spec-template.md`, from Module 14) to `docs/spec.md`, then start Claude Code in plan mode (`claude --permission-mode plan`).
+3. Ask Claude Code to draft sections 1-4 (drafting prompt in `STAGE.md`) (problem, user stories, EARS acceptance criteria, open questions). Cite DOC ids for each criterion. Include the boundaries 500.00 and 500.01, unauthorized approval, empty reason and replay.
+4. Use the grilling prompt in `STAGE.md` to be questioned one question at a time. Write each answer into section 4 with a role as owner. Where the documents do not decide (see DOC-8), defer with a reason; do not invent an answer.
 5. Compare your spec with `solutions/stage1-spec.md` before switching branches.
 
 ## Branch 2: design and implementation (120 minutes)
@@ -31,7 +31,7 @@ Commit your work, then switch as directed in `README.md`. Read `STAGE.md` and `d
 Commit your work, then switch to `3-review`. Review the supplied implementation and test output against the specification. Run `/code-review` (and `/security-review` for the authorization path), then verify each finding with code and tests. Record the affected requirement, evidence and release impact. Produce a release recommendation and list the checks that were not run. Compare with `solutions/stage3-review.md`. No deployment occurs.
 
 ## Claude Code concepts in the flow
-`CLAUDE.md` and path rules provide project context. Spec Kit skills (`/speckit-specify`, `/speckit-clarify`, `/speckit-constitution`) structure the spec. Plan mode plans; the built-in `/code-review` reviews. Source authority and freshness still need your scrutiny: only approved documents are decisions. Subagents can examine a bounded question read-only. Permissions and hooks can limit or automate actions but do not replace application authorization or human review.
+`CLAUDE.md` and path rules provide project context. The six-section spec template (`docs/spec-template.md`) structures the spec; plan mode drafts and grills it. Plan mode plans; the built-in `/code-review` reviews. Source authority and freshness still need your scrutiny: only approved documents are decisions. Subagents can examine a bounded question read-only. Permissions and hooks can limit or automate actions but do not replace application authorization or human review.
 
 ## Detailed walkthrough and copyable prompts
 

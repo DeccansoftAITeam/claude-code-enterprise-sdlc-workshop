@@ -19,7 +19,7 @@ Report real test outcomes. Do not claim production readiness: demo identities, S
 
 ## Tooling
 
-Planning uses Claude Code plan mode. Review uses the built-in `/code-review` (and `/security-review` for authorization changes). Specs use Spec Kit's `/speckit-specify` and `/speckit-clarify`.
+Planning uses Claude Code plan mode. Review uses the built-in `/code-review` (and `/security-review` for authorization changes). Specs are written from `docs/spec-template.md`, drafted and grilled in Claude Code plan mode.
 
 ## Governance
 

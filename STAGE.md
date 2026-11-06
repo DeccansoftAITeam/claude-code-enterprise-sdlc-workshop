@@ -1,7 +1,7 @@
 ﻿# Stage 2 Design and implement
 
 ## Inputs
-The baseline application, `docs/approved-spec.md`, `docs/refund-contract.md`. You work independently; the approved decisions are in `policy-docs/` and the GitHub issue (`gh issue view 1`). Start the local app and run the baseline test first. The contract is the exercise target; its staging and deployment items are outside today's release-readiness scope.
+The baseline application, `docs/approved-spec.md` and `docs/refund-contract.md`. You work independently; the approved decisions are in `policy-docs/` and the GitHub issue (`gh issue view 1`). Start the local app and run the baseline test first. The contract is the exercise target; its staging and deployment items are outside today's release-readiness scope.
 
 ## Tasks
 1. In plan mode (`claude --permission-mode plan`), ask Claude Code to draft sections 5 and 6 of the spec (design delta, contract, tasks, risk tier and gates) and identify changes to the UI, API, persistence, authorization and audit. Review before approving. Approve the spec yourself (gate G1) by changing its Status to approved.

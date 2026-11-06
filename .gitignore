@@ -10,3 +10,6 @@ render_review.py
 set*.txt
 stage2.txt
 stage3.txt
+docs/trainer.md
+docs/trainer-guide.docx
+docs/trainer-deck.pptx

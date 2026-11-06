@@ -1,7 +1,7 @@
 ﻿# Stage 1 Discover and specify
 
 ## Inputs
-The running application, the baseline test, the GitHub issue (`gh issue view 1`) and the synthetic policy documents in `policy-docs/`. You work independently. The issue is your entry point; the documents speak for support, finance, product, security and data.
+The running application, the baseline test, the GitHub issue (setup and `gh` steps are in `README.md`) and the synthetic policy documents in `policy-docs/`. You work independently. The issue is your entry point; the documents speak for support, finance, product, security and data.
 
 ## Exercise
 1. Run the app and test. Submit $501.00 and record what you actually observe.

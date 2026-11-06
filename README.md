@@ -1,6 +1,6 @@
 ﻿# Northstar enterprise SDLC workshop
 
-Northstar is a fictional online retailer. Support agents submit customer refunds; finance should review high-value requests. The current application immediately approves any positive amount. This workshop uses a single change to practice Claude Code and spec-driven development across an enterprise delivery flow. There is no real payment integration or production authentication.
+Northstar is a fictional online retailer. Support agents submit customer refunds; finance should review high-value requests. The current application immediately approves any positive amount. This workshop uses a single change to practice Claude Code and spec-driven development across an enterprise delivery flow.
 
 ## Six-hour route
 
@@ -15,15 +15,50 @@ Each branch is a stand-alone starting point. Save your work before changing bran
 
 `main`, `1-discover` and `2-implement` contain the baseline that approves any positive amount. `3-review` contains a completed-looking implementation with two deliberate defects; follow its `STAGE.md`, and expect the included tests to fail until you find and fix them. No branch deploys anything.
 
-## Prerequisites
+## Get set up
 
-Claude Code, Python 3.10+, Git, and a way to read the GitHub issue, which is your entry point. Use one of these:
+You need Git, Python 3.10+, Claude Code and the GitHub CLI (`gh`). Run the commands below in a terminal (PowerShell, Terminal or bash). A free GitHub account is enough; the repository is public.
 
-- **GitHub CLI (recommended):** install `gh` (https://cli.github.com), run `gh auth login` once, then `gh issue view 1 --repo DeccansoftAITeam/claude-code-enterprise-sdlc-workshop` (or just `gh issue view 1` inside your clone). Claude Code can run the same command for you.
-- **GitHub MCP server (optional alternative):** if your organization already uses it, add it with `claude mcp add --transport http github https://api.githubcopilot.com/mcp/` and authenticate when prompted, then ask Claude Code to read issue 1 of this repository.
-- **No tooling:** open https://github.com/DeccansoftAITeam/claude-code-enterprise-sdlc-workshop/issues/1 in a browser and paste the text into Claude Code.
+**1. Install `gh`** (https://cli.github.com)
 
-The issue links to the documents in `policy-docs/`, which are also in your clone, so you can read them offline.
+```bash
+winget install --id GitHub.cli     # Windows
+brew install gh                    # macOS
+```
+
+On Linux, follow https://github.com/cli/cli/blob/trunk/docs/install_linux.md. Open a new terminal afterwards so `gh` is on your PATH, and check it with `gh --version`.
+
+**2. Sign in to GitHub** (once per machine)
+
+```bash
+gh auth login
+```
+
+Choose **GitHub.com**, then **HTTPS**, answer **Yes** to authenticate Git with your GitHub credentials, then choose **Login with a web browser**. Copy the one-time code, press Enter, paste it in the browser and authorize. Confirm with `gh auth status`.
+
+**3. Clone the repository and move into it**
+
+```bash
+gh repo clone DeccansoftAITeam/claude-code-enterprise-sdlc-workshop
+cd claude-code-enterprise-sdlc-workshop
+git switch 1-discover
+```
+
+(`git clone https://github.com/DeccansoftAITeam/claude-code-enterprise-sdlc-workshop.git` works too.) Everything else in this workshop happens inside this folder. `gh` reads the clone's `origin` remote, so inside this folder it already knows which repository to use; no `--repo` flag is needed.
+
+**4. Read the issue, your entry point**
+
+In the terminal, from the repository folder:
+
+```bash
+gh issue view 1
+```
+
+Or start Claude Code in the same folder (`claude`) and either ask it "Read GitHub issue 1 with gh and summarise it", or type `! gh issue view 1` to run the command yourself. Claude Code uses the same `gh` sign-in as your terminal. If it asks permission to run `gh`, allow it. Either way, you get the same text. The issue links to the documents in `policy-docs/`, which are already in your clone.
+
+**No `gh`?** Open https://github.com/DeccansoftAITeam/claude-code-enterprise-sdlc-workshop/issues/1 in a browser and paste the text into Claude Code.
+
+**GitHub MCP server (optional)** If your organization already uses it, `claude mcp add --transport http github https://api.githubcopilot.com/mcp/` and authenticate when prompted, then ask Claude Code to read issue 1. It is not required.
 
 ## Start the application
 
@@ -53,4 +88,4 @@ Open http://127.0.0.1:8000 and submit $501.00. On the baseline branches the resp
 
 Open the GitHub issue **Refund approval for high-value refunds** (`gh issue view 1`). It links to the synthetic policy documents in [`policy-docs/`](policy-docs/README.md); check each document's status before relying on it. Copy `docs/spec-template.md` to `docs/spec.md` (problem, stories, EARS criteria, open questions, plan, risk and gates), write and grill the spec in Claude Code plan mode, and review with the built-in `/code-review`.
 
-See `STAGE.md` for the current stage and `docs/participant.md` for the guided workbook. Reference code is a teaching solution, not production-ready financial software.
+See `STAGE.md` for the current stage and `docs/participant.md` for the guided workbook.

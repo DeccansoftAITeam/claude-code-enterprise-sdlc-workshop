@@ -5,7 +5,7 @@ This branch contains a completed-looking training implementation with deliberate
 
 ## Tasks
 1. Derive independent checks for boundary, authorization, idempotency and audit from the specification.
-2. Ask Claude Code to use a bounded read-only subagent to inspect the implementation. Verify claims by reading the cited code and running focused tests.
+2. Run the built-in `/code-review` and `/security-review` on the branch, and optionally ask Claude Code to use a bounded read-only subagent to inspect the implementation. You work independently. Verify claims by reading the cited code and running focused tests.
 3. Write findings with the requirement, evidence, impact and release disposition. Record what you did not test.
 4. Decide whether the implementation is release-ready. Compare with `solutions/stage3-review.md` at the end.
 

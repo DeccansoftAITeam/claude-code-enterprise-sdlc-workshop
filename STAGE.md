@@ -28,4 +28,4 @@ Grilling prompt (plan mode):
 Read docs/spec.md. Interview me about gaps in it, one question at a time. For each question give your recommended answer and why. Do not edit any file. After each answer I give, say whether it contradicts an earlier answer. When I say "done", list the questions and answers as rows for the Open questions table in markdown.
 ```
 
-Expected output: a source-backed, testable spec with status `draft`. Compare it with `solutions/stage1-spec.md` at the transition. The reference is a teaching example, not an actual approval.
+Expected output: a source-backed, testable spec with status `draft`.

@@ -11,7 +11,7 @@ Northstar is a fictional online retailer. Support agents submit customer refunds
 | 3 | Design and implementation | 2-implement | Change and test evidence |
 | 4 | Review and release readiness | 3-review | Findings and go/no-go rationale |
 
-Each branch is a stand-alone starting point. Save your work before changing branches: `git switch -c my-work` creates a local branch. To begin another stage, commit your work locally, then `git switch 2-implement` (or `3-review`) and make another local branch. Compare against the solutions at each transition. Business roles (support, finance, product, security, data) are represented by the documents in `policy-docs/`.
+Each branch is a stand-alone starting point. Save your work before changing branches: `git switch -c my-work` creates a local branch. To begin another stage, commit your work locally, then `git switch 2-implement` (or `3-review`) and make another local branch. Business roles (support, finance, product, security, data) are represented by the documents in `policy-docs/`.
 
 `main`, `1-discover` and `2-implement` contain the baseline that approves any positive amount. `3-review` contains a completed-looking implementation with two deliberate defects; follow its `STAGE.md`, and expect the included tests to fail until you find and fix them. No branch deploys anything.
 

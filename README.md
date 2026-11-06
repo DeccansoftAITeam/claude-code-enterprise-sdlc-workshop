@@ -2,14 +2,14 @@
 
 Northstar is a fictional online retailer. Support agents submit customer refunds; finance should review high-value requests. The current application immediately approves any positive amount. This workshop uses a single change to practice Claude Code and spec-driven development across an enterprise delivery flow.
 
-## Six-hour route
+## Route
 
-| Time | Stage | Branch | Output |
+| Step | Stage | Branch | Output |
 |---|---|---|---|
-| 0:00-1:00 | Understand the project and read the issue | 1-discover | Baseline observation |
-| 1:00-3:00 | Discovery and specification | 1-discover | Rule register and specification |
-| 3:00-5:00 | Design and implementation | 2-implement | Change and test evidence |
-| 5:00-6:00 | Review and release readiness | 3-review | Findings and go/no-go rationale |
+| 1 | Understand the project and read the issue | 1-discover | Baseline observation |
+| 2 | Discovery and specification | 1-discover | Rule register and specification |
+| 3 | Design and implementation | 2-implement | Change and test evidence |
+| 4 | Review and release readiness | 3-review | Findings and go/no-go rationale |
 
 Each branch is a stand-alone starting point. Save your work before changing branches: `git switch -c my-work` creates a local branch. To begin another stage, commit your work locally, then `git switch 2-implement` (or `3-review`) and make another local branch. Compare against the solutions at each transition. Business roles (support, finance, product, security, data) are represented by the documents in `policy-docs/`.
 

@@ -4,7 +4,7 @@
 The baseline application, `docs/approved-spec.md` and `docs/refund-contract.md`. You work independently; the approved decisions are in `policy-docs/` and the GitHub issue (`gh issue view 1`). Start the local app and run the baseline test first. The contract is the exercise target; its staging and deployment items are outside today's release-readiness scope.
 
 ## Tasks
-1. In plan mode (`claude --permission-mode plan`), ask Claude Code to draft sections 5 and 6 of the spec (design delta, contract, tasks, risk tier and gates) and identify changes to the UI, API, persistence, authorization and audit. Review before approving. Approve the spec yourself (gate G1) by changing its Status to approved.
+1. In plan mode (`claude --permission-mode plan`), ask Claude Code to draft sections 5 and 6 of your spec, using `docs/approved-spec.md` as the baseline if you did not finish yours (design delta, contract, tasks, risk tier and gates) and identify changes to the UI, API, persistence, authorization and audit. Review before approving. Approve the spec yourself (gate G1) by changing its Status to approved.
 2. Add tests for $500.00, $500.01, missing reason, authorization and duplicate requests. Run and record the failing results.
 3. Implement the specification with Claude Code in small steps. Run tests, inspect the diff and verify changes yourself.
 4. Run the built-in `/code-review` (and `/security-review` for the approval path) on the change. Confirm its findings with code or tests.

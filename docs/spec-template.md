@@ -4,7 +4,7 @@ Status: draft
 Risk tier: [1 | 2 | 3]
 
 <!--
-  Template: Module 14, Spec-Driven Development. Six sections, one file.
+  Template from Module 14 (Spec-Driven Development). Six sections, one file. Copy it to docs/spec.md and fill it in.
   Sections 1-4 are written by YOU (the spec owner). Claude may draft sections 5 and 6
   in plan mode; you review them. Only a person changes Status to "approved".
   Nothing is built until Status is "approved".

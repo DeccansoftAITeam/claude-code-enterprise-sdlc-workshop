@@ -88,4 +88,4 @@ Open http://127.0.0.1:8000 and submit $501.00. On the baseline branches the resp
 
 Open the GitHub issue **Refund approval for high-value refunds** (`gh issue view 1`). It links to the synthetic policy documents in [`policy-docs/`](policy-docs/README.md); check each document's status before relying on it. Copy `docs/spec-template.md` to `docs/spec.md` (problem, stories, EARS criteria, open questions, plan, risk and gates), write and grill the spec in Claude Code plan mode, and review with the built-in `/code-review`.
 
-See `STAGE.md` for the current stage and `docs/participant.md` for the guided workbook.
+See `STAGE.md` for the current stage.

@@ -8,7 +8,7 @@ The baseline application, `docs/approved-spec.md` and `docs/refund-contract.md`.
 2. Add tests for $500.00, $500.01, missing reason, authorization and duplicate requests. Run and record the failing results.
 3. Implement the specification with Claude Code in small steps. Run tests, inspect the diff and verify changes yourself.
 4. Run the built-in `/code-review` (and `/security-review` for the approval path) on the change. Confirm its findings with code or tests.
-5. Record commands, outcomes, known gaps and the next owner's handoff. Compare with `solutions/reference_app.py` and `solutions/reference_tests.py`.
+5. Record commands, outcomes, known gaps and the next owner's handoff.
 
 Copyable planning prompt:
 
